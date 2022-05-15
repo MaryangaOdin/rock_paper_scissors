@@ -7,8 +7,8 @@ function updateScreen(playerChoice, computerChoice, winner) {
     /* Add choices to table */
     let playerBadge = document.getElementById(`row${round}`).childNodes[3].childNodes[0];
     let computerBadge = document.getElementById(`row${round}`).childNodes[5].childNodes[0];
-    playerBadge.style.backgroundImage = `url(../images/human/${playerChoice}.png)`;
-    computerBadge.style.backgroundImage = `url(../images/robot/${computerChoice}.png)`;
+    playerBadge.style.backgroundImage = `url(./images/human/${playerChoice}.png)`;
+    computerBadge.style.backgroundImage = `url(./images/robot/${computerChoice}.png)`;
     /* Indicate winner in table */
     if (winner == 'human') {
         playerBadge.style.borderColor = '#1288FF';
