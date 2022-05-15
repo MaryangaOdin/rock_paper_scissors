@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="manifest" href="./favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="./styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+
+    <title>
+        Rock, Paper, Scissors - by Marayanga
+    </title>
+</head>
+
+<body>
+
+<header>
+    <img src="./images/human/head.jpeg" class="left" alt="Human head">
+    <div id="title">
+        <h1>Rock, Paper, Scissors</h1>
+        <p id="subtitle">
+            <span class="man">Man</span> vs. <span class="machine">Machine</span>
+        </p>
+    </div>
+    <img src="./images/robot/head.jpeg" class="right" alt="Robot head">
+</header>
+<main>
+    <div class="score man">
+        <span id="playerScore">0</span>
+        <p id = "reload" class="instruction">Pick one ↴</p>
+        <div class="buttons">
+            <img src="./images/human/rock.png" alt="Human hand playing rock" class="humanhand" value="rock">
+            <img src="./images/human/paper.png" alt="Human hand playing paper" class="humanhand" value="paper">
+            <img src="./images/human/scissors.png" alt="Human hand playing scissors" class="humanhand" value="scissors">
+        </div>
+    </div>
+    <div id="history">
+        <table>
+            <tr id="row1">
+                <td>1</td>
+                <td><div class="badge"></div></td>
+                <td><div class="badge"></div></td>
+            </tr>
+            <tr id="row2">
+                <td>2</td>
+                <td><div class="badge"></div></td>
+                <td><div class="badge"></div></td>
+            </tr>
+            <tr id="row3">
+                <td>3</td>
+                <td><div class="badge"></div></td>
+                <td><div class="badge"></div></td>
+            </tr>
+            <tr id="row4">
+                <td>4</td>
+                <td><div class="badge"></div></td>
+                <td><div class="badge"></div></td>
+            </tr>
+            <tr id="row5" class="last">
+                <td>5</td>
+                <td><div class="badge"></div></td>
+                <td><div class="badge"></div></td>
+            </tr>
+        </table>
+    </div>
+    <div class="score machine">
+        <span id="computerScore">0</span>
+        <div class="buttons">
+            <img src="./images/robot/rock.png" alt="Robot hand playing rock" id = "robotrock" class="robothand">
+            <img src="./images/robot/paper.png" alt="Robot hand playing paper" id = "robotpaper" class="robothand">
+            <img src="./images/robot/scissors.png" alt="Robot hand playing scissors" id = "robotscissors" class="robothand">
+        </div>
+    </div>
+</main>
+<footer>
+    Made by <a href="https://github.com/MaryangaOdin/">Maryanga</a> 
+    for <a href="https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors">The Odin Project</a>
+    © 2022
+</footer>
+
+<script type="text/javascript" src="./scripts/rps.js"></script>
+
+</body>
+</html>
