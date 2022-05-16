@@ -20,8 +20,8 @@ function updateScreen(playerChoice, computerChoice, winner) {
         let message = 'Tied!';
         playerScore > computerScore ? message = 'Man wins!' 
         : computerScore > playerScore ? message = 'Machine wins!' : message = 'Tied!';
-        document.getElementById('subtitle').innerText = message;
-        document.getElementById('reload').innerHTML = 'Again? <a href="#" id="reloadlink">Refresh!</a>';
+        message += '- Again? <a href="#" id="reloadlink">Refresh!</a>'
+        document.getElementById('subtitle').innerHTML = message;
         document.getElementById('reloadlink').addEventListener('click', () => location.reload());
     }
  }
