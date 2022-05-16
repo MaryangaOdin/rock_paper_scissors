@@ -18,7 +18,7 @@ function updateScreen(playerChoice, computerChoice, winner) {
     /* End of game logic */
     if (round == 5) {
         let message = 'Tied!';
-        playerScore > computerScore ? message = 'Man wins!' 
+        playerScore > computerScore ? message = '(Wo)man wins!' 
         : computerScore > playerScore ? message = 'Machine wins!' : message = 'Tied!';
         message += '- Again? <a href="#" id="reloadlink">Refresh!</a>'
         document.getElementById('subtitle').innerHTML = message;
