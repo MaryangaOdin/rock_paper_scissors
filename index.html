@@ -21,26 +21,20 @@
 
 <body>
 
-<header>
-    <img src="./images/human/head.jpeg" class="left" alt="Human head">
-    <div id="title">
-        <h1>Rock, Paper, Scissors</h1>
-        <p id="subtitle">
-            <span class="man">Man</span> vs. <span class="machine">Machine</span>
-        </p>
-    </div>
-    <img src="./images/robot/head.jpeg" class="right" alt="Robot head">
-</header>
+<div id="left">
+    <p class = "man">Man</p>
+    <img src="./images/human/rock.png" alt="Human hand playing rock" class="humanhand" value="rock">
+    <img src="./images/human/paper.png" alt="Human hand playing paper" class="humanhand" value="paper">
+    <img src="./images/human/scissors.png" alt="Human hand playing scissors" class="humanhand" value="scissors">
+    <div class="head human"></div>
+</div>
 <main>
-    <div class="score man">
-        <span id="playerScore">0</span>
-        <p id = "reload" class="instruction">Pick one ↴</p>
-        <div class="buttons">
-            <img src="./images/human/rock.png" alt="Human hand playing rock" class="humanhand" value="rock">
-            <img src="./images/human/paper.png" alt="Human hand playing paper" class="humanhand" value="paper">
-            <img src="./images/human/scissors.png" alt="Human hand playing scissors" class="humanhand" value="scissors">
-        </div>
-    </div>
+    <p>vs.</p>
+    <h1>Rock, Paper, Scissors</h1>
+    <p id="subtitle">&nbsp;</p>
+    <p id="score">
+        <span class="man" id="humanscore">0</span> - <span class="machine" id="computerscore">0</span>
+    </p>
     <div id="history">
         <table>
             <tr id="row1">
@@ -70,21 +64,16 @@
             </tr>
         </table>
     </div>
-    <div class="score machine">
-        <span id="computerScore">0</span>
-        <div class="buttons">
-            <img src="./images/robot/rock.png" alt="Robot hand playing rock" id = "robotrock" class="robothand">
-            <img src="./images/robot/paper.png" alt="Robot hand playing paper" id = "robotpaper" class="robothand">
-            <img src="./images/robot/scissors.png" alt="Robot hand playing scissors" id = "robotscissors" class="robothand">
-        </div>
-    </div>
+    <footer>Made by Saranoya for The Odin Project</footer>
 </main>
-<footer>
-    Made by <a href="https://github.com/MaryangaOdin/">Maryanga</a> 
-    for <a href="https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors">The Odin Project</a>
-    © 2022
-</footer>
-
+<div id="right">
+    <p class="machine">Machine</p>
+    <img src="./images/robot/rock.png" alt="Robot hand playing rock" id = "robotrock" class="robothand">
+    <img src="./images/robot/paper.png" alt="Robot hand playing paper" id = "robotpaper" class="robothand">
+    <img src="./images/robot/scissors.png" alt="Robot hand playing scissors" id = "robotscissors" class="robothand">
+    <div class="head robot"></div>
+</div>
+    
 <script type="text/javascript" src="./scripts/rps.js"></script>
 
 </body>

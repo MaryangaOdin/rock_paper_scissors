@@ -1,47 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+
+
 body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     font-family: 'VT323', monospace;
-    background-color:rgb(200, 200, 200);
+    justify-content: space-between;
+    background-color: white;
+    border-top: none;
+    font-size: 2em;
+    text-align: center;
+
 }
 
 a {
     color:rgb(200, 200, 200);
 }
 
-header, main, footer {
-    background-color: white;
+img {
+    width: 4em;
 }
 
-header, main {
+p {
+    margin-top: 0;
+    width: 90%;
+}
+
+#left, #right, main {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
-header > img {
-    width: 15%;
-    margin-bottom: 40px;
+#right {
+    align-items: flex-end;
 }
 
-header > img.left {
-    border-bottom-right-radius: 50px;
-    -webkit-box-shadow: 10px 10px 25px 0 #1288FF; 
-    box-shadow: 10px 15px 25px 0 #1288FF;
+#left > img {
+    transform: rotate(90deg);
 }
 
-header > img.right {
-    border-bottom-left-radius: 50px;
-    -webkit-box-shadow: -5px 15px 20px 0 #FF3822; 
-    box-shadow: -5px 15px 20px 0 #FF3822;
+#left > img:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }
 
-main {
-    font-size: 10em;
+#right > img {
+    transform: rotate(270deg);
+    justify-self: flex-end;
+    cursor: not-allowed;
 }
 
 footer {
@@ -50,7 +59,10 @@ footer {
     font-family: verdana;
     font-size: 0.7em;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
+    font-size: 0.25em;
+    border-radius: 5px;
+    margin: 20px;
 }
 
 footer a {
@@ -58,76 +70,78 @@ footer a {
 }
 
 table {
+    margin: 0 auto;
     border-collapse: collapse;
+    width: 50%;
 }
 
 td {
     border-bottom: 1px solid rgb(200, 200, 200);
-    font-size: 0.5em;
-    padding: 5px;
 }
 
 tr.last > td {
     border: none;
 }
 
-
-#title {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+.man, .machine {
     font-size: 1.5em;
-}
-
-.score {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
     text-align: center;
-    justify-content: space-between;
-}
-
-.score > .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-self: flex-end;
-} 
-
-.buttons > img {
-    width: 33%;
-}
-
-.humanhand:hover {
-    opacity: 1;
-}
-
-p.instruction {
-    font-size: 0.2em;
-    color:rgb(200, 200, 200);
 }
 
 .man {
-    color:#1288FF;
+    color: #1288FF;
 }
 
 .machine {
-    color:#FF3822;
+    color: #FF3822;
 }
 
-.machine > .buttons >  img:hover {
-    cursor: not-allowed;
+.head {
+    border-radius: 50%;
+    border: 5px solid;
+    height: 4em;
+    width: 4em;
+    background-size: contain;
+    margin: 20px;
 }
 
-.man > .buttons > img:hover {
-    cursor: pointer;
-    opacity: 1
+.head > p {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.human {
+    border-color: #1288FF;
+}
+
+.robot {
+    border-color: #FF3822;
+}
+
+.head.human {
+    background-image: url('../images/human/head.jpeg');
+    
+}
+
+.head.robot {
+    background-image: url('../images/robot/head.jpeg');
+}
+
+#score {
+    font-size: 2em;
+    margin: 0;
 }
 
 .badge {
     border-radius: 50%;
-    border: 1px solid rgb(200, 200, 200);
-    height: 0.5em;
-    width: 0.5em;
-    border-width: 5px;
+    height: 1em;
+    width: 1em;
+    border: 5px solid;
+    border-color:rgb(200, 200, 200);
+    justify-self: center;
+    margin: 5px 0;
     background-size: contain;
 }
+
+

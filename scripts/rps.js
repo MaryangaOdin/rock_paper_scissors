@@ -2,8 +2,8 @@ let round = 0, playerScore = 0, computerScore = 0;
 
 function updateScreen(playerChoice, computerChoice, winner) {
     /* Update scoreboard */
-    document.getElementById('playerScore').innerText = playerScore;
-    document.getElementById('computerScore').innerText = computerScore;
+    document.getElementById('humanscore').innerText = playerScore;
+    document.getElementById('computerscore').innerText = computerScore;
     /* Add choices to table */
     let playerBadge = document.getElementById(`row${round}`).childNodes[3].childNodes[0];
     let computerBadge = document.getElementById(`row${round}`).childNodes[5].childNodes[0];
