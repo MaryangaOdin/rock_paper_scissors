@@ -69,8 +69,7 @@ function playRound(playerChoice) {
         } else {
                 computerScore++;
                 winner = 'robot';
-        }
-            
+        }    
     }
     round++;
     updateScreen(playerChoice, computerChoice, winner);
@@ -96,8 +95,3 @@ function handleClick(e) {
 }
 
 document.addEventListener('click', handleClick);
-
-
-
-
-
