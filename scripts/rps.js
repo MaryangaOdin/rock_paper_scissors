@@ -26,7 +26,7 @@ function endGame() {
 
 function updateScreen(playerChoice, computerChoice, winner) {
     /* Update scoreboard */
-    document.getElementById('subtitle').innerText = `Round ${round}: ${winner} wins`;
+    document.getElementById('subtitle').innerHTML = `Round ${round}: ${winner} wins.`;
     document.getElementById('humanscore').innerText = playerScore;
     document.getElementById('computerscore').innerText = computerScore;
     /* Add choices to table */
@@ -42,9 +42,9 @@ function updateScreen(playerChoice, computerChoice, winner) {
     }
     /* End of round logic */
     if (round == 5) {
-        setTimeout(endGame, 1000);
+        setTimeout(endGame, 1500);
     } else {
-        setTimeout(newRound, 1000);
+        setTimeout(newRound, 1500);
     }
  }
 

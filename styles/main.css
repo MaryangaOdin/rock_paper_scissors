@@ -10,8 +10,10 @@ body {
     background-color: white;
     border-top: none;
     font-size: 2em;
-    text-align: center;
+}
 
+main {
+    text-align: center;
 }
 
 a {
@@ -24,12 +26,12 @@ img {
 
 p {
     margin-top: 0;
-    width: 90%;
 }
 
 #left, #right, main {
     display: flex;
     flex-direction: column;
+    min-width: 30%;
 }
 
 #right {
@@ -83,11 +85,11 @@ tr.last > td {
 .man, .machine {
     font-size: 1.5em;
     width: 100%;
-    text-align: center;
 }
 
 .man {
     color: #1288FF;
+    text-align: right;
 }
 
 .machine {
@@ -100,7 +102,6 @@ tr.last > td {
     height: 4em;
     width: 4em;
     background-size: contain;
-    margin: 20px;
 }
 
 .head > p {
@@ -118,11 +119,13 @@ tr.last > td {
 
 .head.human {
     background-image: url('../images/human/head.jpeg');
+    align-self: flex-end;
     
 }
 
 .head.robot {
     background-image: url('../images/robot/head.jpeg');
+    align-self: flex-start;
 }
 
 #score {
