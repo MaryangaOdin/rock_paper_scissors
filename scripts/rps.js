@@ -1,7 +1,29 @@
 let round = 0, playerScore = 0, computerScore = 0;
 
+function newRound() {
+    for (let humanhand of document.getElementsByClassName('humanhand')) {
+        humanhand.style.visibility = 'visible';
+    }
+}
+
+function endGame() {
+    let message ='';
+        if (playerScore > computerScore) {
+            message = '(Wo)man wins!' 
+        } else if (computerScore > playerScore) {
+            message = 'Machine wins!'
+        } else {
+            message = 'Tied!';
+        } 
+        message += '- Go again? <a href="#" id="reloadlink">Refresh!</a>'
+        document.getElementById('subtitle').innerHTML = message;
+        document.getElementById('reloadlink').addEventListener('click', () => location.reload());
+}
+
+
 function updateScreen(playerChoice, computerChoice, winner) {
     /* Update scoreboard */
+    document.getElementById('subtitle').innerText = `Round ${round}: ${winner} wins`;
     document.getElementById('humanscore').innerText = playerScore;
     document.getElementById('computerscore').innerText = computerScore;
     /* Add choices to table */
@@ -15,24 +37,27 @@ function updateScreen(playerChoice, computerChoice, winner) {
     } else if (winner == 'robot') {
         computerBadge.style.borderColor = '#FF3822';
     }
-    /* End of game logic */
+    /* End of round logic */
     if (round == 5) {
-        let message = 'Tied!';
-        playerScore > computerScore ? message = '(Wo)man wins!' 
-        : computerScore > playerScore ? message = 'Machine wins!' : message = 'Tied!';
-        message += '- Again? <a href="#" id="reloadlink">Refresh!</a>'
-        document.getElementById('subtitle').innerHTML = message;
-        document.getElementById('reloadlink').addEventListener('click', () => location.reload());
+        setTimeout(endGame, 1000);
+    } else {
+        setTimeout(newRound, 1000);
     }
  }
 
 function computerPlay () {
     let options = ['rock', 'paper', 'scissors'];
-    return options[ Math.floor(Math.random() * 3)];
+    let computerChoice = options[ Math.floor(Math.random() * 3)];
+    for (let robothand of document.getElementsByClassName('robothand')) {
+        if (robothand.getAttribute('value') == computerChoice) {
+            robothand.style.visibility = 'visible';
+        }
+    }
+    return computerChoice;
 }
 
 function playRound(playerChoice) {
-    let computerChoice = computerPlay(), winner = '';
+    let computerChoice = computerPlay(), winner = 'neither';
     if (computerChoice !== playerChoice) {
         if (
             (playerChoice == 'rock' && computerChoice == 'scissors') ||
@@ -58,6 +83,14 @@ function getEventTarget(e) {
 
 function handleClick(e) {
     if (getEventTarget(e).getAttribute('value') && round < 5) {
+        getEventTarget(e).classList.add('clicked');
+        for (let hand of document.getElementsByClassName('hand')) {
+            hand.style.visibility = 'hidden';
+            if (hand.classList.contains('clicked')) {
+                hand.style.visibility = 'visible';
+                hand.classList.remove('clicked');
+            }
+        }
         playRound(getEventTarget(e).getAttribute('value'));
     }
 }

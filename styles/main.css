@@ -42,7 +42,6 @@ p {
 
 #left > img:hover {
     cursor: pointer;
-    opacity: 0.5;
 }
 
 #right > img {
@@ -142,4 +141,10 @@ tr.last > td {
     background-size: contain;
 }
 
+.move-left {
+    transform: translate(-100px, 0);
+}
 
+.move-right {
+    transform: translate(100px, 0);
+}
