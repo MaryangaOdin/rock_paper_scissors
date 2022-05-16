@@ -4,20 +4,26 @@ function newRound() {
     for (let humanhand of document.getElementsByClassName('humanhand')) {
         humanhand.style.visibility = 'visible';
     }
+    for (let robothand of document.getElementsByClassName('robothand')) {
+        robothand.style.visibility = 'hidden';
+    }
 }
 
 function endGame() {
     let message ='';
-        if (playerScore > computerScore) {
-            message = '(Wo)man wins!' 
-        } else if (computerScore > playerScore) {
-            message = 'Machine wins!'
-        } else {
-            message = 'Tied!';
-        } 
-        message += '- Go again? <a href="#" id="reloadlink">Refresh!</a>'
-        document.getElementById('subtitle').innerHTML = message;
-        document.getElementById('reloadlink').addEventListener('click', () => location.reload());
+    if (playerScore > computerScore) {
+        message = '(Wo)man wins!' 
+    } else if (computerScore > playerScore) {
+        message = 'Machine wins!'
+    } else {
+        message = 'Tied!';
+    } 
+    message += '- Go again? <a href="#" id="reloadlink">Refresh!</a>'
+    document.getElementById('subtitle').innerHTML = message;
+    document.getElementById('reloadlink').addEventListener('click', () => location.reload());
+    for (let hand of document.getElementsByClassName('hand')) {
+        hand.style.visibility = 'hidden';
+    }
 }
 
 
