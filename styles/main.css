@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'VT323', monospace;
+    background-color:rgb(200, 200, 200);
 }
 
 a {
@@ -13,7 +14,7 @@ a {
 }
 
 header, main, footer {
-    background: white;
+    background-color: white;
 }
 
 header, main {
