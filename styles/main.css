@@ -12,6 +12,10 @@ body {
     min-height: 100vh;
 }
 
+a {
+    color:rgb(200, 200, 200);
+}
+
 header, main, footer {
     width: 80%;
     margin: 0 auto;

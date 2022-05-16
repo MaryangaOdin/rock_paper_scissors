@@ -15,13 +15,14 @@ function updateScreen(playerChoice, computerChoice, winner) {
     } else if (winner == 'robot') {
         computerBadge.style.borderColor = '#FF3822';
     }
-    /* End of game changes */
+    /* End of game logic */
     if (round == 5) {
-        let message = '';
+        let message = 'Tied!';
         playerScore > computerScore ? message = 'Man wins!' 
         : computerScore > playerScore ? message = 'Machine wins!' : message = 'Tied!';
         document.getElementById('subtitle').innerText = message;
-        document.getElementById('reload').innerText = 'Again? Refresh!';
+        document.getElementById('reload').innerHTML = 'Again? <a href="#" id="reloadlink">Refresh!</a>';
+        document.getElementById('reloadlink').addEventListener('click', () => location.reload());
     }
  }
 
@@ -62,7 +63,6 @@ function handleClick(e) {
 }
 
 document.addEventListener('click', handleClick);
-
 
 
 
