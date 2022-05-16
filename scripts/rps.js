@@ -10,13 +10,11 @@ function newRound() {
 }
 
 function endGame() {
-    let message ='';
+    let message ='Tied!';
     if (playerScore > computerScore) {
         message = '(Wo)man wins!' 
     } else if (computerScore > playerScore) {
         message = 'Machine wins!'
-    } else {
-        message = 'Tied!';
     } 
     message += '- Go again? <a href="#" id="reloadlink">Refresh!</a>'
     document.getElementById('subtitle').innerHTML = message;
@@ -25,7 +23,6 @@ function endGame() {
         hand.style.visibility = 'hidden';
     }
 }
-
 
 function updateScreen(playerChoice, computerChoice, winner) {
     /* Update scoreboard */
